@@ -5,13 +5,13 @@ class Solution {
             return false;
         }
         
-       int n=0;
+       int reverse=0;
        int temp=x;
        while(temp>0){
-        n=n*10+(temp%10);
+        reverse=reverse*10+(temp%10);
         temp=temp/10;
        }
-       return n==x;
+       return reverse==x;
         
     }
 }
