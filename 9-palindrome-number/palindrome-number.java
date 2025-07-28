@@ -4,21 +4,14 @@ class Solution {
         if(x<0){
             return false;
         }
-        //changes integer to string
-        String str=Integer.toString(x);
-        //it is about indicies
-        int left=0;
-        int right=str.length()-1;
-        while(left<right){
-            //it prints characters of the index
-            if(str.charAt(left)!=str.charAt(right)){
-                return false;
-            }
-            left++;
-            right--;
-                  
-        }
-        return true;
+        
+       int n=0;
+       int temp=x;
+       while(temp>0){
+        n=n*10+(temp%10);
+        temp=temp/10;
+       }
+       return n==x;
         
     }
 }
