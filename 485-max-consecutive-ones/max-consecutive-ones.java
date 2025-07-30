@@ -5,7 +5,7 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             if(nums[i]==1){
                 count++;
-                maxCount=Math.max(maxCount,count);
+                maxCount=Math.max(maxCount,count);//return minmum value 
             }
             else{
                  count=0;
