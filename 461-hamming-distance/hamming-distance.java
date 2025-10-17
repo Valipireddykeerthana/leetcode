@@ -3,8 +3,10 @@ class Solution {
         int count=0;
         int xor=x^y;
         while(xor!=0){
-            xor=(xor)&(xor-1);
-            count++;
+            //xor=(xor)&(xor-1);
+            //count++;
+            count+=xor & 1;
+            xor>>=1;
         }
         return count;
         
