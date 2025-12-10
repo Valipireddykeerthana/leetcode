@@ -1,12 +1,18 @@
 class Solution {
     public int firstUniqChar(String s) {
-        for(int i=0;i<s.length();i++){
-            char c=s.charAt(i);
-            if(s.indexOf(c)==s.lastIndexOf(c)){
-                return i;
-            }
+       int freq[]=new int[256];
+       for(int i=0;i<s.length();i++){
+        freq[s.charAt(i)]++;
+       }
+       for(int i=0;i<s.length();i++){
+        if(freq[s.charAt(i)]==1){
+            return i;
+            
         }
-        return -1;
+       }
+       return -1;
+       
+
         
     }
 }
