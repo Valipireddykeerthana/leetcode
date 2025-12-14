@@ -25,7 +25,14 @@ class Solution {
             Integer[] sublist=new Integer[size];
             for(int i=0;i<size;i++){
                 TreeNode node=queue.poll();
-                int index=leftToright ? i:size-i-1;
+                int index;
+                if(leftToright){
+                    index=i;
+                }
+                else{
+                    index=size-i-1;
+                }
+                
                 sublist[index]=node.val;
                 
                 if(node.left!=null) queue.offer(node.left);
