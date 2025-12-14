@@ -22,19 +22,16 @@ class Solution {
         boolean leftToright=true;
         while(!queue.isEmpty()){
             int size=queue.size();
-            List<Integer> sublist=new ArrayList<>();
+            Integer[] sublist=new Integer[size];
             for(int i=0;i<size;i++){
                 TreeNode node=queue.poll();
-                if(leftToright){
-                    sublist.add(node.val);
-                }
-                else{
-                    sublist.add(0,node.val);
-                }
+                int index=leftToright ? i:size-i-1;
+                sublist[index]=node.val;
+                
                 if(node.left!=null) queue.offer(node.left);
                 if(node.right!=null) queue.offer(node.right);
             }
-            res.add(sublist);
+            res.add(Arrays.asList(sublist));
             leftToright=!leftToright;
         }
         return res;
